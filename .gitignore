@@ -1,0 +1,56 @@
+# Environnements virtuels
+venv/
+.env
+*.env
+.env.local
+.env.*.local
+
+# Fichiers de dépendances
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.sqlite3
+db.sqlite3
+
+# Configuration IDE
+.vscode/
+.idea/
+*.iml
+
+# Fichiers logs et caches
+logs/
+*.log
+local_settings.py
+*.swp
+*.swo
+
+# Migrations compilées (non nécessaires si elles sont bien gérées)
+**/migrations/__pycache__/
+**/migrations/*.pyc
+
+# Fichiers statiques et médias générés
+#staticfiles/
+#media/
+
+# Dépendances Python
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Docker & Virtualisation
+docker-compose.override.yml
+*.dockerfile
+*.pid
+
+# Node.js & Frontend (si utilisation de npm/yarn avec Django)
+node_modules/
+package-lock.json
+yarn.lock
+npm-debug.log
+dist/
+build/
+
+# Clés SSH ou autres fichiers sensibles
+*.pem
+*.crt
+#*.key
