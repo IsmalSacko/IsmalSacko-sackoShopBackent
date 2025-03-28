@@ -1,9 +1,9 @@
 # Environnements virtuels
 venv/
-.env
-*.env
-.env.local
-.env.*.local
+#.env
+#*.env
+#.env.local
+#.env.*.local
 
 # Fichiers de dépendances
 *.pyc
