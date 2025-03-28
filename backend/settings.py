@@ -12,13 +12,17 @@ environ.Env.read_env()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+env = environ.Env()
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'))  # Charge les variables d’environnement
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
+# Utilisation des variables d’environnement
 SECRET_KEY = env("SECRET_KEY")
+DEBUG = env.bool("DEBUG", default=False)
 
+# Configuration de la base de données
+DATABASES = {
+    'default': dj_database_url.parse(env("DATABASE_URL"))
+}
 # SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = True
 
@@ -84,9 +88,6 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 #     }
 # }
 
-DATABASES = {
-    'default': dj_database_url.parse(os.environ("DATABASE_URL"))
-}
 
 
 
